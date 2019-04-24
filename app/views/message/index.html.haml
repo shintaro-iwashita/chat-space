@@ -1,0 +1,49 @@
+.wrapper
+  .chat-side
+    .side-header
+      %p.side-header__user-name mmm
+      %ul.user-menu
+        %li.user-menu__edit-user 
+          %a{:href => "/groups/new"}
+            %i.fa.fa-cog 
+        %li.user-menu__new-group
+          %a{:href => "/users/219/edit"}
+            %i.fa.fa-edit
+            
+    .groups
+      %a{:href => "/groups/369/messages"}
+        .group
+          %p.group__group-name kkk
+          %p.group__latest-message rrr
+  
+.chat-main
+  .main-header
+    .current-group{"data-group_id" => "369"}
+      %h2.current-group__name ppp
+      %ul.member-list
+        Member：
+        %li.member-list__member 
+    %a{:href => "/groups/369/edit"}
+      .main-header__edit-btn Edit
+  .messages
+    .message{"data-message_id" => "759"}
+      .upper-info
+        %p.upper-info__user ppp
+        %p.upper-info__date  99999999
+      %p.message__text ppp
+     
+   
+  
+  
+  .form
+    %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/369/messages", :enctype => "multipart/form-data", :method => "post"}
+      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+      %input{:name => "authenticity_token", :type => "hidden", :value => "e1v938DD3Fc3gTiJe4mym7TzWnxVCg/NSkXYfC88b7oUksEzEPQudRVPJ14iW5Db0XQhFNEOz4ddBYiBuqHmPw=="}/
+      .input-box
+        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+        %label.image-label{:for => "message_image"}
+          %i.fa.fa-image
+          %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
+      %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+
