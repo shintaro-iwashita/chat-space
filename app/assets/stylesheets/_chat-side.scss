@@ -13,9 +13,9 @@ li {
   width: 300px;
   color: white;
   float: left;
-}
-.chat-side a {
-  color: white;
+  &__a {
+    color: white;
+ }
 }
 
 .side-header {
@@ -27,13 +27,17 @@ li {
   justify-content: space-between;
   width: 100%;
   font-weight: bold;
+  
 }
+
+
 .p {
   display: block;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  color: #f3f6fa
 }
 
 a {
@@ -54,6 +58,7 @@ a {
 
 .group__latest-message {
   font-size: 11px;
+  color: #f3f6fa
 }
 
 .div {
@@ -69,5 +74,6 @@ a {
   padding-bottom:0px;
 }
 
-
-
+.fa {
+  color: white;
+}

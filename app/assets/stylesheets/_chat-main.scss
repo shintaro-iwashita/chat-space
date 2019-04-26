@@ -9,16 +9,16 @@
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px #eee;
+  &__edit-btn {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 30px;
+    border: solid 1px #38aef0;
+    color: #38aef0;
+  }
 }
 
-.main-header__edit-btn {
-  height: 40px;
-  line-height: 40px;
-  padding: 0 20px;
-  margin-top: 30px;
-  border: solid 1px #38aef0;
-  color: #38aef0;
-}
 .member-list {
   display: flex;
   margin-top: 15px;
@@ -27,47 +27,25 @@
 }
 
 
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%;
-  font-weight: normal;
-}
-
-
-.upper-info {
+.upper {
   display: flex;
+    &-info__user {
+      color: #434a54;
+    font-size: 16px;
+    font-weight: bold;
+      &-info__date {
+        color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+     }
+   }
 }
 
-
-.upper-info__user {
-  color: #434a54;
-  font-size: 16px;
-  font-weight: bold;
-
-
-}
-
-.upper-info__date {
-  color: #999999;
-  font-size: 12px;
-  margin-left: 10px;
-
-
-}
 
 .current-group {
   font-size: 20px;
   color: #333;
   margin-top: 35px;
-}
-
-
-.a {
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 
@@ -78,89 +56,93 @@ h1, h2, h3, h4, h5, h6 {
   overflow: scroll;
 }
 
-.form {
-  height: 90px;
-  padding: 20px 40px;
-  background-color: #ddd;
-}
+
 
 .new-message {
   display: flex;
-}
+  &__submit-btn {
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    }
+  }
+
+
+
 
 .input-box {
   position: relative;
   width: 100%;
+  &__text {
+    height: 50px;
+    width: 100%;
+    padding: 0 40px 0 10px;
+    font-size: 18px;
+    color: #434a54;
+    border-style: none;
+    &__input {
+      -webkit-appearance: textfield;
+      background-color: white;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      padding: 1px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: initial;
+      border-image: initial;
+      &__input, textarea, select {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+      }
+    }
+  } 
 }
-.input-box__text {
-  height: 50px;
-  width: 100%;
-  padding: 0 40px 0 10px;
-  font-size: 18px;
-  color: #434a54;
-  border-style: none;
-
-}
-
-.input, textarea, select {
-  font-family: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-
-}
-
-.input {
-  -webkit-appearance: textfield;
-  background-color: white;
-  -webkit-rtl-ordering: logical;
-  cursor: text;
-  padding: 1px;
-  border-width: 2px;
-  border-style: inset;
-  border-color: initial;
-  border-image: initial;
-
-}
+  
+ .input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 11px system-ui;
+  }
 
 .image-label {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  &__input {
+      display:none;
+  }
 }
 
 
-.input, textarea, select, button {
-  text-rendering: auto;
-  color: initial;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  margin: 0em;
-  font: 400 11px system-ui;
+.h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.a {
+  text-decoration: none;
 }
 
-.image-label__input {
-  display:none;
+* {
+  box-sizing: border-box;
 }
 
-.new-message__submit-btn {
-  height: 50px;
-  padding: 0 30px;
-  margin-left: 15px;
-  background-color: #38aef0;
-  color: white;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-
-
-.input, textarea, select, button, meter, progress {
-  -webkit-writing-mode: horizontal-tb !important;
+.form {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
 }
