@@ -50,17 +50,18 @@ a {
   background-color: #2f3e51;
   padding: 20px 20px 0;
   overflow: scroll;
-}
-.groups__group-name {
-  font-size: 15px;
-  color: #f3f6fa;
-  margin-bottom: 5px;
-}
+  &__group-name {
+    font-size: 15px;
+    color: #f3f6fa;
+    margin-bottom: 5px; 
+  &__latest-message {
+    font-size: 11px;
+    color: #f3f6fa
+   }
+  }
+ }
 
-.groups__latest-message {
-  font-size: 11px;
-  color: #f3f6fa
-}
+
 
 .div {
   margin:0;
