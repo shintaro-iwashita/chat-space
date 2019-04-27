@@ -42,6 +42,7 @@ li {
 
 a {
   text-decoration: none;
+  color: #f3f6fa
 }
 
 .groups {
@@ -50,13 +51,13 @@ a {
   padding: 20px 20px 0;
   overflow: scroll;
 }
-.group__group-name {
+.groups__group-name {
   font-size: 15px;
   color: #f3f6fa;
   margin-bottom: 5px;
 }
 
-.group__latest-message {
+.groups__latest-message {
   font-size: 11px;
   color: #f3f6fa
 }

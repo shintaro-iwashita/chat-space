@@ -10,12 +10,9 @@
           %a{:href => "/users/219/edit"}
             %i.fa.fa-edit
             
-    .groups
-      %a{:href => "/groups/369/messages"}
-        .group
-          %p.group__group-name kkk
-          %p.group__latest-message rrr
-  
+    
+    = render partial:"groups"
+
 .chat-main
   .main-header
     .current-group{"data-group_id" => "369"}
@@ -25,15 +22,8 @@
         %li.member-list__member 
     %a{:href => "/groups/369/edit"}
       .main-header__edit-btn Edit
-  .messages
-    .message{"data-message_id" => "759"}
-      .upper-info
-        %p.upper-info__user ppp
-        %p.upper-info__date  99999999
-      %p.message__text ppp
-     
    
-  
+  = render partial:"messeges"
   
   .form
     %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/369/messages", :enctype => "multipart/form-data", :method => "post"}
