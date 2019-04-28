@@ -1,5 +1,12 @@
-%a{:href => "/groups/369/messages"}
-  .groups
-    %p.group__group-name kkk
-    %p.group__latest-message rrr
-  
+-# %a{:href => "/groups/369/messages"}
+.groups
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      %p.group__group-name
+        = group.name
+      %p.group__lastest-message
+        メッセージはまだありません。
+
+
+-# p.group__group-name kkk
+-#     %p.group__latest-message rrr
