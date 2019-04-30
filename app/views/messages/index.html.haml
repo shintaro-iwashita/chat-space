@@ -5,28 +5,29 @@
       = current_user.name
       %ul.user-menu
         %li.user-menu__edit-user 
-          %a{href: '/groups/new'}
+          = link_to edit_user_path(current_user) do
+          
             %i.fa.fa-cog 
         %li.user-menu__new-group
-          = link_to edit_user_path(current_user) do
+          = link_to new_group_path do
             -# = fa_icon 'cog', class: 'icon'
-          
             %i.fa.fa-edit
             
     
-    = render partial:"groups"
+   
+    = render partial:"layouts/groups"
 
 .chat-main
   .main-header
-    .current-group{"data-group_id" => "369"}
+    .current-group{"data-group_id" => "3"}
       %h2.current-group__name ppp
       %ul.member-list
         Member：
         %li.member-list__member 
-    %a{:href => "/groups/369/edit"}
-      .main-header__edit-btn Edit
+    %a{:href => "/groups/3/edit"}
+      .main-header__edit-btn Edit,
   
-  = render partial:"messeges"
+  = render partial:"message"
   
   .form
     %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/369/messages", :enctype => "multipart/form-data", :method => "post"}
