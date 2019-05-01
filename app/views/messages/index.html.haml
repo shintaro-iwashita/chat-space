@@ -30,14 +30,10 @@
   = render partial:"message"
   
   .form
-    %form#new_message.new-message{"accept-charset" => "UTF-8", :action => "/groups/369/messages", :enctype => "multipart/form-data", :method => "post"}
-      %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-      %input{:name => "authenticity_token", :type => "hidden", :value => "e1v938DD3Fc3gTiJe4mym7TzWnxVCg/NSkXYfC88b7oUksEzEPQudRVPJ14iW5Db0XQhFNEOz4ddBYiBuqHmPw=="}/
+    = form_for [@group, @message] do |f|
       .input-box
-        %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-        %label.image-label{:for => "message_image"}
+        = f.text_field :content, class: "input-box__text", placeholder: "type a message"
+        = f.label :image, class: 'image-label' do
           %i.fa.fa-image
-          %input#message_image.image-label__input{:name => "message[image]", :type => "file"}/
-      %input.new-message__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
-
-
+          = f.file_field :image, class: 'image-label__input'
+      = f.submit 'Send', class: 'new_message__submit-btn'
