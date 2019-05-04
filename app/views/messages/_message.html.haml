@@ -1,6 +1,12 @@
-.messages{"data-message_id" => "759"}
-  .upper-info
-    %p.upper-info__user ppp
-    %p.upper-info__date  99999999
-    %p.message__text ppp
-     
+.upper-info
+  %p.upper-info__user
+    = message.user.name
+  %p.upper-info__date
+    = message.created_at.strftime("%Y/%m/%d %H:%M") 
+  %p.message__text ppp
+  - if message.content.present?
+    %p.lower-message__content
+    = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+
