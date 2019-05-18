@@ -43,7 +43,6 @@ function buildHTML(message){
 
   $('.new_message').on('submit', function(e){
   e.preventDefault();
-  console.log("test")
   var formData = new FormData(this);
   var url = $(this).attr('action')
   $.ajax({
