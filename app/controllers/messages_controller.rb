@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
     @group.users.each do |user|
       @users = user
     end
-    # @group = Group.find(params[:group_id])
   end
 
 
