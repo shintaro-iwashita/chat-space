@@ -24,7 +24,8 @@
         .member-list__member 
           %ul.member-list
             Member：
-            = @users.name
+          - @group.users.each do |user|
+            %li.member= user.name
       = link_to edit_group_path(@group) do
         .main-header__edit-btn Edit,
 
@@ -41,9 +42,3 @@
       = f.submit 'Send', class: 'new_message__submit-btn'
 
  
-
-  -# .messages{"data-message_id" => "759"}
-  -#   .upper-info
-  -#     %p.upper-info__user ppp
-  -#     %p.upper-info__date  99999999
-  -#     %p.message__text ppp
