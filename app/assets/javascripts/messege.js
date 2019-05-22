@@ -1,8 +1,7 @@
 $(document).on('turbolinks:load', function() { 
 function buildHTML(message){
   if ( message.image ) {
-  var html =
-  `<div class="info" data-message-id=${message.id}>
+  var html =`<div class="info" data-message-id=${message.id}>
   <div class="upper-info">
     <div class="upper-info__user-name">
       ${message.user_name}
@@ -63,7 +62,7 @@ function buildHTML(message){
   alert('error');
   })
   .always(() => {
-    $(".new-message__submit-btn").removeAttr("disabled");
+    $(".new_message__submit-btn").removeAttr("disabled");
     });
   });
 });
