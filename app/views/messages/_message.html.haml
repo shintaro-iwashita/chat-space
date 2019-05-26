@@ -1,6 +1,7 @@
-.message{"data-message_id" => "2055"}
+.message{"data-messageid": "#{message.id}"}
   .upper-info
     %p.upper-info__user 
+      = message.user.name
     %p.upper-info__date
       = message.created_at.strftime("%Y/%m/%d %H:%M")
   - if message.content.present?
