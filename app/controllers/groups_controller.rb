@@ -5,18 +5,22 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-
   end
 
   def create
     @group = Group.new(group_params)
     @group.users << current_user
     if @group.save
+       @group.associate_users(user_ids: group_params[:user_ids])
       redirect_to root_path, notice: 'グループを作成しました'
     else
       render :new
     end
   end
+
+  def edit
+  end
+
 
   def update
     if @group.update(group_params)
