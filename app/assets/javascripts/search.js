@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
   function appendUsers(user) {
     var html =`<div class="chat-group-user clearfix js-chat-user">
                 <p class="chat-group-user__name">
-                ${user.name}
+                ${user.name} 
                 </p>
                 <a class="user_search_add chat-group-user__btn chat-group-user__btn--add" data-user-id="${user.id}" data-user-name="${user.name}">追加
                 </a>
@@ -53,6 +53,7 @@ $(document).on('turbolinks:load', function() {
   $(function() {
     $(document).on("click", '.user_search_add', function() {
       var name = $(this).attr("data-user-name");
+      console.log(name)
       var user_id = $(this).attr("data-user-id");
       $(this).parent().remove();
       appendMembers(name, user_id);

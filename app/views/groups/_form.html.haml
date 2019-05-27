@@ -25,8 +25,15 @@
       #chat_group_user_name.chat-group-user.clearfix.js-chat-member
         %p{name: "user_name", value: current_user.name, }
           = current_user.name
+      - @group.users.each do |user|
+        #chat_group_user_22.chat-group-user.clearfix.js-chat-member
+          %input{:name => "group[user_ids][]", :type => "hidden", :value => user.id}/
+          %p.chat-group-user__name= user.name
+          %a.user_search_remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
 
+            
           
+        
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
     .chat-group-form__field--right
