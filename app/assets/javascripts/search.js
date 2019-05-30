@@ -12,7 +12,6 @@ $(document).on('turbolinks:load', function() {
                 </div>`
 
     user_list.append(html);
-    return html
   }
 
   function appendMembers(name, user_id) {
@@ -52,8 +51,7 @@ $(document).on('turbolinks:load', function() {
 
   $(function() {
     $(document).on("click", '.user_search_add', function() {
-      var name = $(this).attr("data-user-name");
-      console.log(name)
+      var name = $(this).attr("data-user-name");   
       var user_id = $(this).attr("data-user-id");
       $(this).parent().remove();
       appendMembers(name, user_id);
