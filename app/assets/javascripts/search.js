@@ -1,6 +1,7 @@
 $(document).on('turbolinks:load', function() { 
   var user_list = $("#user-search-result");
   var member_list = $(".chat-group-users");
+  var search_list = $("#user-search-result")
 
   function appendUsers(user) {
     var html =`<div class="chat-group-user clearfix js-chat-user">
@@ -24,31 +25,37 @@ $(document).on('turbolinks:load', function() {
     member_list.append(html);
   }
 
-  $(function() {
-    $(".chat-group-form__input").on("keyup", function() {
-      var input = $("#user-search-field").val();
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json'
-      })
+  function appendNoUsers(user) {
+    var html = `<div class="chat-group-user clearfix">
+                <p class="chat-group-user__name">${ user }</p>
+                </div>`
 
+    search_list.append(html);
+  }
 
-  .done(function(members) {
-    $("#user-search-result").empty();
+  $(".chat-group-form__input").on("keyup", function() {
+    var input = $("#user-search-field").val();
+    $.ajax({
+      type: 'GET',
+      url: '/users',
+      data: { keyword: input },
+      dataType: 'json'
+    })
+    .done(function(members) {
+      $("#user-search-result").empty();
       if (members.length !== 0) {
         members.forEach(function(user){
-          appendUsers(user);
+            appendUsers(user);
         })
       }
-     })
-      .fail(function() {
-       alert('ユーザー検索に失敗しました');
-      });
+      else {
+        appendNoUsers("一致するユーザーはいません");
+      }
+    })
+    .fail(function() {
+        alert('ユーザー検索に失敗しました');
     });
   });
-
   $(function() {
     $(document).on("click", '.user_search_add', function() {
       var name = $(this).attr("data-user-name");   
@@ -61,4 +68,3 @@ $(document).on('turbolinks:load', function() {
     });
   });
 });
-
